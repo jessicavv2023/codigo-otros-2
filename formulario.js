@@ -25,14 +25,14 @@ formulario.onsubmit = function (e) {
     if (nombre.length < 3) {
       var itemNombre = document.createElement("li");
       itemNombre.textContent =
-        "Escriba un nombre con más o igual a tres caracteres para que sea valido";
+        "* Escriba un nombre con más o igual a tres caracteres para que sea valido.";
       mensaje.appendChild(itemNombre);
     }
 
     if (edad < 18 || edad > 120) {
       var itemEdad = document.createElement("li");
       itemEdad.textContent =
-        "La edad debe ser mayor a 18 pero menor a 120 años";
+        "* La edad debe ser mayor a 18 pero menor a 120 años.";
       mensaje.appendChild(itemEdad);
     }
 
@@ -85,6 +85,7 @@ formulario.onsubmit = function (e) {
       var espacio = document.createElement("br");
       spanNombre.textContent = descripcion + ": ";
       inputNombre.value = valor;
+      inputNombre.disabled = true; // deshabilitar el campo para poder cambiar los datos cuando se encuentran en la lista de invitados
       elementoLista.appendChild(spanNombre);
       elementoLista.appendChild(inputNombre);
       elementoLista.appendChild(espacio);
